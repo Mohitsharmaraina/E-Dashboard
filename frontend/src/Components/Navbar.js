@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import logo from "E:/New_E_Dashboard/frontend/src/Images/logo.jpeg";
+import logo from '../Images/logo.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faAdd, faArrowRightFromBracket, faUserPlus,faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
