@@ -4,7 +4,10 @@ const User = require('./db/user');
 const Product = require('./db/product');
 const jwt = require('jsonwebtoken');
 
-const cors = require('cors');
+app.use(cors({
+  origin: "https://mohitecommdashboard.vercel.app/"
+}));
+
 require('./db/config');
 
 const app = express();
@@ -15,6 +18,10 @@ const jwtKey = process.env.JWT_KEY;       // from .env
 const port = process.env.PORT || 4500;    // fallback if not set
 
 // user collection
+
+app.get("/", (req, res) => {
+  res.send("E-Commerce Backend is Live!");
+});
 
 app.post('/register', async (req, resp) => {
     if (req.body.name && req.body.email && req.body.password) {
@@ -59,6 +66,11 @@ app.post('/login', async (req, resp) => {
 
 })
 // products collection 
+
+app.get("/", (req, res) => {
+  res.send("E-Commerce Backend is Live!");
+});
+
 app.post('/add',verifyToken, async (req, resp) => {
     if (req.body.name && req.body.price && req.body.category && req.body.company) {
         let product = new Product(req.body);
