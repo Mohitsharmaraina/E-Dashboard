@@ -58,38 +58,40 @@ const Products = () => {
 
         <Container style={{ marginTop: '30px' }}>
             <input className='search-box' type='text' placeholder='Search here..' onChange={(e) => searchProduct(e.target.value)}></input>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>S.No.</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Company</th>
-                        <th>Update</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        products.length > 0 ?
-                            products.map((item, i) =>
-                                <tr key={item._id}>
-                                    <td>{i + 1}</td>
-                                    <td>{item.name}</td>
-                                    <td>$ {item.price}</td>
-                                    <td>{item.category}</td>
-                                    <td>{item.company}</td>
-                                    <td><Link to={`/update/${item._id}`} style={{marginRight:'30px'}}><FontAwesomeIcon icon={faPenToSquare} color='orange' /></Link><button type='link' onClick={() => deleteProduct(item._id)}><FontAwesomeIcon icon={faTrash}color='red' /> </button></td>
-                                </tr>
-                            ) :
+            <div className="responsive-table">
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Company</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            products.length > 0 ?
+                                products.map((item, i) =>
+                                    <tr key={item._id}>
+                                        <td>{i + 1}</td>
+                                        <td>{item.name}</td>
+                                        <td>$ {item.price}</td>
+                                        <td>{item.category}</td>
+                                        <td>{item.company}</td>
+                                        <td><Link to={`/update/${item._id}`} style={{ marginRight: '30px' }}><FontAwesomeIcon icon={faPenToSquare} color='orange' /></Link><button type='link' onClick={() => deleteProduct(item._id)}><FontAwesomeIcon icon={faTrash} color='red' /> </button></td>
+                                    </tr>
+                                ) :
 
-                            <h2 style={{ marginTop: '20px' }}> No Product Found</h2>
+                                <h2 style={{ marginTop: '20px' }}> No Product Found</h2>
 
-                    }
+                        }
 
 
-                </tbody>
-            </Table>
+                    </tbody>
+                </Table>
+            </div>
         </Container>
     )
 }

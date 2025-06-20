@@ -1,31 +1,32 @@
+/* === Base styles (unchanged) === */
 
-.Nav{
+.Nav {
     margin: 0;
     padding: 0;
     text-decoration: none;
     background-color: #333446;
 }
-.Nav-left{
+
+.Nav-left {
     text-align: right;
 }
-.Nav li{
-     display: inline-block;
+
+.Nav li {
+    display: inline-block;
     padding: 10px;
     margin: 10px;
     font-size: large;
 }
 
-.Nav li a{
-
+.Nav li a {
     color: white;
     text-decoration: none;
-
 }
-.Nav li a:hover{
 
+.Nav li a:hover {
     color: yellow;
-
 }
+
 .footer {
     position: relative;
     bottom: 0;
@@ -35,19 +36,26 @@
     width: 100vw;
 }
 
-.sign-up , .login, .add-box{
-
+.sign-up,
+.login,
+.add-box {
     display: block;
     margin: 20px;
     padding: 10px;
     width: 300px;
     border: 1px solid;
 }
-.register, .login-container, .add-product{
+
+.register,
+.login-container,
+.add-product {
     margin-left: 30%;
     margin-top: 5%;
 }
-#signUpBtn, #login-btn, #add-btn{
+
+#signUpBtn,
+#login-btn,
+#add-btn {
     margin: 20px;
     width: 150px;
     background-color: #333446;
@@ -56,20 +64,24 @@
     border: none;
     padding: 10px;
 }
-.logo{
+
+.logo {
     width: 45px;
     float: left;
     margin-top: 9px;
     margin-left: 5px;
     border-radius: 50%;
 }
-.error-msg, .error{
+
+.error-msg,
+.error {
     margin-top: -20px;
     display: block;
     color: red;
     margin-left: 20px;
     font-size: small;
 }
+
 .search-box {
     height: 40px;
     padding-left: 10px;
@@ -77,4 +89,85 @@
     border: 1px solid gray;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+/* === Responsive styles === */
+
+@media (max-width: 768px) {
+    .Nav {
+        text-align: center;
+    }
+
+    .Nav li {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .Nav-left {
+        text-align: center;
+    }
+
+    .responsive-table {
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+    }
+
+    .responsive-table table {
+        width: 700px;
+        /* or more, so columns don't wrap */
+    }
+
+    .register,
+    .login-container,
+    .add-product {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 30px;
+    }
+
+    .sign-up,
+    .login,
+    .add-box {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    #signUpBtn,
+    #login-btn,
+    #add-btn {
+        width: 30%;
+    }
+
+    .search-box {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .logo {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        float: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .Nav li {
+        font-size: medium;
+    }
+
+    .search-box {
+        height: 36px;
+        font-size: 14px;
+    }
+
+    #signUpBtn,
+    #login-btn,
+    #add-btn {
+        font-size: 14px;
+        padding: 8px;
+
+    }
 }
